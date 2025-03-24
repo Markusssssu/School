@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Школьная система</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+
+   QMainWindow {
+       background-color: #000000;
+   }
+
+
+   QTabWidget::pane {
+       border: none;
+       background-color: transparent;
+       padding: 15px;
+   }
+
+   QTabBar::tab {
+       background: #333;
+       color: #ccc;
+       padding: 10px 50px;
+       font-size: 10px;
+       border: none;
+       border-radius: 3px;
+       margin-right: 10px;
+   }
+
+   QTabBar::tab:selected {
+       background: #107c10;
+       color: white;
+   }
+
+   QTabBar::tab:hover {
+       background: #0e6a0e;
+   }
+
+
+   QGroupBox {
+       background-color: #1a1a1a;
+       border: none;
+       padding: 25px;
+       font-size: 16px;
+       color: #ccc;
+       margin-top: 20px;
+   }
+
+   QGroupBox::title {
+       subcontrol-origin: margin;
+       subcontrol-position: top left;
+       padding: 0 5px;
+       background-color: transparent;
+       color: #ccc;
+   }
+
+
+   QPushButton {
+       background-color: #107c10;
+       border: none;
+       color: white;
+       padding: 12px 25px;
+       font-size: 14px;
+       min-width: 150px;
+   }
+
+   QPushButton:hover {
+       background-color: #0e6a0e;
+   }
+
+   QPushButton:pressed {
+       background-color: #0a4a0a;
+   }
+
+
+   QLineEdit {
+       background-color: #333;
+       border: none;
+       padding: 12px;
+       font-size: 14px;
+       color: #ccc;
+       min-width: 200px;
+   }
+
+   QLineEdit:focus {
+       border: 2px solid #107c10;
+   }
+
+
+   QTableWidget {
+       background-color: #1a1a1a;
+       border: none;
+       font-size: 14px;
+       color: #ccc;
+       padding: 15px;
+   }
+
+   QTableWidget::item {
+       padding: 10px;
+       color: #ccc;
+   }
+
+   QTableWidget::item:selected {
+       background-color: #107c10;
+       color: white;
+   }
+
+   QHeaderView::section {
+       background-color: #333;
+       color: #ccc;
+       padding: 12px;
+       font-size: 14px;
+       font-weight: bold;
+       border: none;
+   }
+
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>961</width>
+      <height>661</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>4</number>
+    </property>
+    <widget class="QWidget" name="tabAddTeacher">
+     <attribute name="title">
+      <string>Добавить учителя</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBoxTeacher">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>921</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Данные учителя</string>
+      </property>
+      <widget class="QLineEdit" name="teacherLastNameLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Фамилия учителя</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="teacherFirstNameLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>80</y>
+         <width>281</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Имя учителя</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="teacherMiddleNameLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>140</y>
+         <width>281</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Отчество учителя</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="teacherSubjectLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>40</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Предмет</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="teacherRoomLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>90</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Номер кабинета</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="addTeacherButton">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>140</y>
+         <width>281</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Добавить учителя</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabAddStudent">
+     <attribute name="title">
+      <string>Добавить ученика</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBoxStudent">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>921</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Данные ученика</string>
+      </property>
+      <widget class="QLineEdit" name="studentLastNameLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Фамилия ученика</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="studentFirstNameLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>90</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Имя ученика</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="studentClassLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>140</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Класс</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="studentSubject1LineEdit">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>40</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Предмет 1</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="studentSubject2LineEdit">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>90</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Предмет 2</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="studentSubject3LineEdit">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>140</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Предмет 3</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="studentGrade1LineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>190</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Оценка по предмету 1</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="studentGrade2LineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>240</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Оценка по предмету 2</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="studentGrade3LineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>290</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Оценка по предмету 3</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="addStudentButton">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>190</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Добавить ученика</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabAddRoom">
+     <attribute name="title">
+      <string>Добавить кабинет</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBoxRoom">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>921</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Данные кабинета</string>
+      </property>
+      <widget class="QLineEdit" name="roomNumberLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Номер кабинета</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="roomFloorLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>90</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Этаж</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="roomThemeLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>40</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Тематика</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="addRoomButton">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>90</y>
+         <width>281</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Добавить кабинет</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabQueries">
+     <attribute name="title">
+      <string>Запросы</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBoxQueries">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>921</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Запросы</string>
+      </property>
+      <widget class="QLineEdit" name="queryStudentLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Фамилия ученика</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="queryStudentButton">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>40</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Успеваемость</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="queryTeacherLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>90</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Фамилия учителя</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="queryTeacherButton">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>90</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Кабинеты учителя</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="queryRoomThemeLineEdit">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>140</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Тематика кабинета</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="queryRoomButton">
+       <property name="geometry">
+        <rect>
+         <x>320</x>
+         <y>140</y>
+         <width>281</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Список кабинетов</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabTable">
+     <attribute name="title">
+      <string>Таблица</string>
+     </attribute>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>911</width>
+        <height>471</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="refreshTableButton">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>500</y>
+        <width>200</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Обновить</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveToFileButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>500</y>
+        <width>200</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Сохранить в файл</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
